@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+        body{
+        background-image: url("https://imgs.search.brave.com/6sYFYBkllsl51awRjvkWG-qYuvpLYA_iNLMqjUuNmSg/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE1/Mzc3MjczNjU2NDAt/ZDliOWNiZWVhYzM0/P3E9ODAmdz0xMDAw/JmF1dG89Zm9ybWF0/JmZpdD1jcm9wJml4/bGliPXJiLTQuMC4z/Jml4aWQ9TTN3eE1q/QTNmREI4TUh4bGVI/QnNiM0psTFdabFpX/UjhNVGw4Zkh4bGJu/d3dmSHg4Zkh3PQ");
+        }
+        *{
+    margin: 0;
+    padding: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+.ul_navbar{
+        background-color:black;
+        color:white;
+        list-style-type:none;
+        margin:0;
+        padding:0;
+        overflow:hidden;
+        }
+li{
+        float:left;
+        }
+li a{
+        display:block;
+        text-decoration: none;
+        padding: 15px 15px 15px 15px;
+        }
+li a:hover
+        {
+        background-color:white;
+        color:black
+        }
+.navbar{
+        padding-top:0px;
+        height:20px
+
+
+        }
+        body{
+        background-image:url("https://images.unsplash.com/photo-1518655048521-f130df041f66?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+        background-size:cover;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+<!--    <h1 style="text-align:center"> SHOW LAPTOPS</h1>-->
+    <ul class="ul_navbar">
+    <li><a href="/seller/home/"  style="color:blue">Home</a></li>
+    <li><a href="/seller/show/" style="color:blue">Show Laptops</a></li>
+    {% if user.is_authenticated %}
+    <li><a href="" style="color:blue">Hello, {{user.username}}</a></li>
+    <li><a href="/auth/logout/"  style="color:blue">Logout</a></li>
+    {% else %}
+    <li><a href="/auth/login/" style="color:blue">Login</a></li>
+    <li><a href="/auth/register/" style="color:blue">Register</a></li>
+    {% endif %}
+</ul><br>
+
+</nav>
+    <h1 style="text-align:center"> SHOW LAPTOPS</h1>
+<!--    <p>Hello, {{user.username}} </p>-->
+    <table class="table table-dark" style="width:50%;text-align:center;margin:auto;">
+        <tr>
+            <th>Company</th>
+            <th>Model</th>
+            <th>RAm</th>
+            <th>ROM</th>
+            <th>Price</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        {%  for lap in laptop_obj %}
+        <tr>
+            <td> {{ lap.company_name }}</td>
+            <td> {{ lap.model_name }}</td>
+            <td> {{ lap.ram}}</td>
+            <td> {{ lap.rom }}</td>
+            <td> {{lap.price}}</td>
+            <td><a href="/seller/update/{{lap.id}}"><button class="btn btn-warning">Update</button></a></td>
+            <td><a href="/seller/delete/{{lap.id}}"><button class="btn btn-danger">Delete</button></a></td>
+        </tr>
+        {% endfor %}
+
+    </table>
+ <a href="/seller/add/"><button>ADD LAPTOP</button></a>
+
+<!--    <a href="/auth/logout/" style="text-align:center"><button class="btn btn-danger">LOGOUT</button></a>-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>

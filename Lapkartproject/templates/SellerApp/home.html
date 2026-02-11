@@ -1,0 +1,368 @@
+<!--
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+.ul_navbar{
+        background-color:black;
+        color:white;
+        list-style-type:none;
+        margin:0;
+        padding:0;
+        overflow:hidden;
+        height:60px;
+        }
+li{
+        float:left;
+        }
+li a{
+        display:block;
+        text-decoration: none;
+        padding: 15px 15px 15px 15px;
+        }
+li a:hover
+        {
+        background-color:white;
+        color:black
+        }
+.navbar{
+        padding-top:0px;
+        height:20px
+
+
+        }
+.background{
+    background: rgba(0, 0, 0, 0.7) url('https://imgs.search.brave.com/eAVa72F51Vo0HXT-k3mi8Qiiv8D3ne5rNU5Z1yQiFR0/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvZmVhdHVy/ZWQvbGFwdG9wLW11/cmpwMW5rNGxwMWlk/bHQuanBn');
+    background-size: cover;
+    background-blend-mode: darken;
+}
+.firstSection{
+    height: 100vh;
+
+}
+.box-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 50%;
+    margin: auto;
+    height: 80%;
+}
+.firstHalf{
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.secondHalf{
+    width: 30%;
+
+}
+.secondHalf img{
+    width: 70%;
+    /* padding: 4px 0; */
+    border: 4px solid white;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+
+}
+.text-big{
+font-size: 36px;
+}
+
+.text-small{
+    font-size: 18px;
+
+}
+.section{
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 80%;
+    margin: auto;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.section-left{
+    flex-direction: row-reverse;
+}
+.paras{
+    padding: 0px 65px;
+}
+
+.sectionTag{
+    padding: 16px 0;
+}
+.sectionSubTag{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.thumbnail img{
+    width: 250px;
+    border: 2px solid black;
+    border-radius: 27px;
+    margin-top: 19px;
+}
+#show_btn{
+    padding: 20px 700px;
+    margin: 2px 3px;
+        }
+
+    </style>
+</head>
+<body>
+
+ <nav>
+
+
+
+    <ul class="ul_navbar">
+    <li><a href="/seller/home/"  style="color:blue">Home</a></li>
+    <li><a href="/seller/show/" style="color:blue">Show Laptops</a></li>
+    {% if user.is_authenticated %}
+    <li><a href="" style="color:blue">Hello, {{user.username}}</a></li>
+    <li><a href="/auth/logout/"  style="color:blue">Logout</a></li>
+    {% else %}
+    <li><a href="/auth/login/" style="color:blue">Login</a></li>
+    <li><a href="/auth/register/" style="color:blue">Register</a></li>
+    {% endif %}
+</ul><br>
+
+</nav>
+
+        <section class="background firstSection">
+        <div class="box-main">
+            <div class="firstHalf">
+                <p class="text-big">Performance Beyond Limitations </p>
+                <p class="text-small">Unleash Your Creativity Choose the Ultimate Laptop Companion.</p>
+
+            </div>
+            <div class="secondHalf">
+                <img src="https://imgs.search.brave.com/tKoTsv-ALstyuJLDv1jW0tVvrez8IwFhaCpMS-9giLM/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE0/OTgwNTAxMDgwMjMt/YzUyNDlmNGRmMDg1/P3E9ODAmdz0xMDAw/JmF1dG89Zm9ybWF0/JmZpdD1jcm9wJml4/bGliPXJiLTQuMC4z/Jml4aWQ9TTN3eE1q/QTNmREI4TUh4elpX/RnlZMmg4TVRCOGZH/eGhjSFJ2Y0h4bGJu/d3dmSHd3Zkh4OE1B/PT0">
+            </div>
+
+        </div>
+
+    </section>
+<section class="section" id="about">
+        <div class="paras">
+            <p class="sectionTag text-big"> Dell. Purely You.</p>
+            <p class="sectionSubTag text-small">The first Dell laptop was the Dell 316LT, launched in 1989. Dell is a well-known brand that produces a range of laptops for various types of users. Dell laptops come in a variety of models with different specifications, designs, and price points. Dell laptops are known for their reliability, making them a popular choice for both personal and professional use. Some popular Dell laptop series include the Dell XPS, Dell Inspiron, Dell G Series, and Dell Latitude. Dell laptops typically run on the Windows operating system, but some models use Linux or ChromeOS. They offer a wide range of configurations, including different processors, memory (RAM), storage, and graphics options. Some Dell laptops come with a touch screen, while others have a traditional non-touch display.  </p>
+        </div>
+        <div class="thumbnail">
+            <img src="https://source.unsplash.com/900x900/?codding,laptop" alt="laptop image" class="imgFluid">
+        </div>
+
+    </section>
+
+    <section class="section section-left" >
+        <div class="paras">
+            <p class="sectionTag text-big">The HP Way Now</p>
+            <p class="sectionSubTag text-small">The Hewlett-Packard Company, commonly shortened to Hewlett-Packard (/ˈhjuːlɪt ˈpækərd/ HYEW-lit PAK-ərd) or HP, was an American multinational information technology company headquartered in Palo Alto, California. HP developed and provided a wide variety of hardware components, as well as software and related services to consumers, small and medium-sized businesses (SMBs), and large enterprises, including customers in the government, health, and education sectors. The company was founded in a one-car garage in Palo Alto by Bill Hewlett and David Packard in 1939, and initially produced a line of electronic test and measurement equipment. The HP Garage at 367 Addison Avenue is now designated an official California Historical Landmark, and is marked with a plaque calling it the "Birthplace of 'Silicon Valley'". </p>
+        </div>
+        <div class="thumbnail">
+            <img src="https://source.unsplash.com/900x900/?html" alt="laptop image" class="imgFluid">
+        </div>
+
+    </section>
+
+    <section class="section" id="services">
+        <div class="paras">
+            <p class="sectionTag text-big">Innovation Never Stands Still.</p>
+            <p class="sectionSubTag text-small">Lenovo Group Limited, doing business as Lenovo (/ləˈnoʊvoʊ/ lə-NOH-voh, Chinese: 联想; pinyin: Liánxiǎng), is a Chinese[7] multinational technology company specializing in designing, manufacturing, and marketing consumer electronics, personal computers, software, business solutions, and related services.[4] Products manufactured by the company include desktop computers, laptops, tablet computers, smartphones, workstations, servers, supercomputers, data storage devices, IT management software, and smart televisions. Its best-known brands include its ThinkPad business line of laptop computers (acquired from IBM), the IdeaPad, Yoga, and Legion consumer lines of laptop computers, and the IdeaCentre and ThinkCentre lines of desktop computers. As of 2021, Lenovo is the world's largest personal computer vendor by unit sales.</p>
+        </div>
+        <div class="thumbnail">
+            <img src="https://source.unsplash.com/900x900/?javascript,lenovo" alt="laptop image" class="imgFluid">
+        </div>
+
+    </section>
+<footer style="text-align:center;background-color:grey;color-white;padding;10px 15px 15px 15px;">
+    <p>Copyright, Lapkart Pvt.Ltd</p>
+</footer>
+</body>
+</html>
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LapKart | Home</title>
+
+    <style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: #222;
+    color: white;
+}
+
+.navbar a{
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.navbar a:hover{
+    color: #ff9800;
+}
+
+/* HERO */
+.hero{
+    text-align: center;
+    padding: 60px 20px;
+    background: #f4f4f4;
+}
+
+.hero h1{
+    font-size: 36px;
+}
+
+.hero p{
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+/* PRODUCTS */
+.products{
+    padding: 40px;
+}
+
+.products h2{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.product-grid{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.product-card{
+    width: 250px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.product-card img{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.price{
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+button{
+    padding: 10px;
+    background: #ff9800;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover{
+    background: #e68900;
+}
+
+/* FOOTER */
+.footer{
+    text-align: center;
+    padding: 15px;
+    background: #222;
+    color: white;
+    margin-top: 40px;
+}
+
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="logo">LapKart</div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Cart</a>
+        <a href="#">Login</a>
+    </nav>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <h1>Buy the Best Laptops Online</h1>
+    <p>Top brands • Best prices • Trusted sellers</p>
+</section>
+
+<!-- PRODUCT SECTION -->
+<section class="products">
+    <h2>Available Laptops</h2>
+
+    <div class="product-grid">
+
+        <!-- PRODUCT CARD -->
+        <div class="product-card">
+            <img src="../img/hp.jpg" alt="HP Laptop">
+            <h3>HP Pavilion</h3>
+            <p class="price">₹55,000</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="../img/dell.jpg" alt="Dell Laptop">
+            <h3>Dell Inspiron</h3>
+            <p class="price">₹60,000</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="../img/lenovo.jpg" alt="Lenovo Laptop">
+            <h3>Lenovo IdeaPad</h3>
+            <p class="price">₹48,000</p>
+            <button>Add to Cart</button>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>© 2026 LapKart. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
